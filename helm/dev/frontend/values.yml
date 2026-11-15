@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: your-registry/books-frontend
+  repository: carloschacon2701/helm-test:dev-frontend
   tag: dev
 
 ingress:

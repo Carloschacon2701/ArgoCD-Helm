@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: your-registry/books-backend
+  repository: carloschacon2701/helm-test:dev-backend
   tag: dev
 
 env:
