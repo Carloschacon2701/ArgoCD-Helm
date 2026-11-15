@@ -1,8 +1,8 @@
 replicaCount: 1
 
 image:
-  repository: carloschacon2701/helm-test:stg-frontend
-  tag: stg
+  repository: carloschacon2701/helm-test
+  tag: stg-frontend
 
 ingress:
   enabled: true

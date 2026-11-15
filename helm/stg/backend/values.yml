@@ -1,8 +1,8 @@
 replicaCount: 1
 
 image:
-  repository: carloschacon2701/helm-test:stg-backend
-  tag: stg
+  repository: carloschacon2701/helm-test
+  tag: stg-backend
 
 env:
   port: 3001

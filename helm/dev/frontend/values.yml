@@ -1,8 +1,8 @@
 replicaCount: 1
 
 image:
-  repository: carloschacon2701/helm-test:dev-frontend
-  tag: dev
+  repository: carloschacon2701/helm-test
+  tag: dev-frontend
 
 ingress:
   enabled: true
