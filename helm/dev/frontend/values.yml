@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  repository: your-registry/books-frontend
+  tag: dev
+
+ingress:
+  enabled: true
+  className: nginx
+  host: dev.books.local

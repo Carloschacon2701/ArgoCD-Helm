@@ -1,0 +1,32 @@
+replicaCount: 1
+
+image:
+  repository: your-registry/books-backend
+  tag: "" # defaults to .Chart.AppVersion
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 3001
+
+env:
+  port: 3001
+  corsOrigin: http://localhost:5173
+  dbHost: postgres
+  dbPort: 5432
+  dbUsername: books
+  dbName: books
+
+secret:
+  # Name of a Secret (containing a DB_PASSWORD key) created out-of-band --
+  # kubectl, a CI step, or a secrets operator (Sealed Secrets, External
+  # Secrets Operator, etc.). Required: the chart never generates this
+  # itself, so no password ever lives in git or Helm values.
+  existingSecretName: ""
+
+ingress:
+  enabled: false
+  className: nginx
+  host: ""
+
+resources: {}

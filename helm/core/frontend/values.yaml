@@ -1,0 +1,17 @@
+replicaCount: 1
+
+image:
+  repository: your-registry/books-frontend
+  tag: "" # defaults to .Chart.AppVersion
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  className: nginx
+  host: ""
+
+resources: {}

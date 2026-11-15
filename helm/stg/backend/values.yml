@@ -1,0 +1,26 @@
+replicaCount: 1
+
+image:
+  repository: your-registry/books-backend
+  tag: stg
+
+env:
+  port: 3001
+  corsOrigin: http://stg.books.local
+  # Postgres runs via `docker compose up postgres -d` on the host, not in-cluster.
+  # host.minikube.internal resolves to the host machine from inside minikube pods.
+  dbHost: host.minikube.internal
+  dbPort: 5433
+  dbUsername: books
+  dbName: books
+
+secret:
+  # Create before syncing:
+  #   kubectl -n stg create secret generic books-backend-stg-db \
+  #     --from-literal=DB_PASSWORD=<password>
+  existingSecretName: books-backend-stg-db
+
+ingress:
+  enabled: true
+  className: nginx
+  host: api.stg.books.local

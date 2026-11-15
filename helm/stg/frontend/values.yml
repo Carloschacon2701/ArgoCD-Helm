@@ -1,0 +1,10 @@
+replicaCount: 1
+
+image:
+  repository: your-registry/books-frontend
+  tag: stg
+
+ingress:
+  enabled: true
+  className: nginx
+  host: stg.books.local
