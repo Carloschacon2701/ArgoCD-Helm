@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+data:
+  PORT: {{ .Values.env.port | quote }}
+  CORS_ORIGIN: {{ .Values.env.corsOrigin | quote }}
+  DB_HOST: {{ .Values.env.dbHost | quote }}
+  DB_PORT: {{ .Values.env.dbPort | quote }}
+  DB_USERNAME: {{ .Values.env.dbUsername | quote }}
+  DB_NAME: {{ .Values.env.dbName | quote }}
