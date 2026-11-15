@@ -18,7 +18,7 @@ secret:
   # Create before syncing:
   #   kubectl -n dev create secret generic books-backend-dev-db \
   #     --from-literal=DB_PASSWORD=<password>
-  existingSecretName: books-backend-dev-db
+  existingSecretName: books-backend-dev
 
 ingress:
   enabled: true
